@@ -43,7 +43,7 @@ pipeline {
 	stage('Perform manual testing') { 
 		steps {
 	                // One or more steps need to be included within the steps block.
-	                timeout(activity: true, time: 5) {
+	                timeout(time: 1, unit: 'HOURS') {
 	                    input 'Proceed to production?'
                 }
             } 
