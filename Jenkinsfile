@@ -40,15 +40,12 @@ pipeline {
                 }
             }
         }
-		stage('Perform manual testing') { 
-			steps { 
-				echo 'Perform manual testing'
-                timeout(time: 2, unit: 'HOURS') {
-                    // Parameter indicates whether to set pipeline to UNSTABLE if Quality Gate fails
-                    // true = set pipeline to UNSTABLE, false = don't
-                    waitForQualityGate abortPipeline: true
+	stage('Perform manual testing') { 
+		steps {
+	                // One or more steps need to be included within the steps block.
+	                timeout(activity: true, time: 5) {
+	                    input 'Proceed to production?'
                 }
-			} 
-		} 
+            } 
 	} 
 }
