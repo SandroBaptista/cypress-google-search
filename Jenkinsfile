@@ -20,7 +20,7 @@ pipeline {
             steps {
                 script {
                     // Path to the JMeter installation directory
-                    def jmeterHome = '/usr/share'
+                    def jmeterHome = '/usr/share/apache-jmeter-5.5'
 
                     // Path to the JMeter test script
                     def jmeterScript = './jmeter-jenkins.jmx'
